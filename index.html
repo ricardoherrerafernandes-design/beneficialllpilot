@@ -1,19 +1,176 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
+  <meta charset="UTF-8">
+  <title>BeneficiALL — La tarjeta da igual</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --primary: #5B2EFF;
+      --secondary: #2EE6A6;
+      --dark: #1A1A1A;
+      --gray: #666;
+      --light-bg: #F4F7FE;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--dark);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 40px 30px;
+      border-radius: 24px;
+      max-width: 420px;
+      width: 90%;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+      text-align: center;
+      margin: 20px;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 5px;
+      letter-spacing: -1px;
+    }
+
+    .tagline {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--gray);
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin-bottom: 15px;
+      line-height: 1.3;
+    }
+
+    p.intro {
+      font-size: 15px;
+      color: var(--gray);
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    input, select, button {
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid #E0E0E0;
+      font-size: 16px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    input:focus, select:focus {
+      border-color: var(--primary);
+      outline: none;
+      background-color: #F9F9FF;
+    }
+
+    button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: 700;
+      margin-top: 10px;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    button:hover {
+      background: #4020c9;
+      transform: translateY(-2px);
+    }
+
+    /* Sección Cómo Funciona */
+    .how-it-works {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      margin-top: 35px;
+      padding-top: 25px;
+      border-top: 1px solid #EEE;
+    }
+
+    .step {
+      font-size: 11px;
+      color: var(--gray);
+    }
+
+    .step span {
+      font-size: 20px;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .footer {
+      margin-top: 25px;
+      font-size: 11px;
+      color: #AAA;
+    }
+
+    @media (max-width: 480px) {
+      .card { padding: 30px 20px; }
+      h2 { font-size: 20px; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to Our Landing Page</h1>
-    </header>
-    <main>
-        <p>This is the best place to find out more about our services.</p>
-    </main>
-    <footer>
-        <p>&copy; 2026 Beneficial Pilot. All rights reserved.</p>
-    </footer>
+
+  <div class="card">
+    <div class="logo">BeneficiALL</div>
+    <div class="tagline">La tarjeta da igual</div>
+    
+    <h2>El fin de la exclusividad bancaria</h2>
+    <p class="intro">
+      Accede a preventas y descuentos sin importar qué tarjeta tengas. Únete a la red que conecta beneficios con personas.
+    </p>
+
+    <form action="https://formspree.io/f/tu_codigo_aqui" method="POST">
+      <input type="text" name="nombre" placeholder="Nombre completo" required>
+      <input type="email" name="_replyto" placeholder="Correo electrónico" required>
+      <input type="tel" name="whatsapp" placeholder="WhatsApp (Ej: +569...)" required>
+
+      <select name="perfil" required>
+        <option value="" disabled selected>Quiero participar como...</option>
+        <option value="comprador">Comprador (Quiero beneficios)</option>
+        <option value="socio">Socio (Tengo tarjetas/cupo)</option>
+        <option value="ambos">Ambos</option>
+      </select>
+
+      <button type="submit">Obtener Acceso Anticipado 🚀</button>
+    </form>
+
+    <div class="how-it-works">
+      <div class="step"><span>🤝</span><strong>Match</strong><br>Te conectamos</div>
+      <div class="step"><span>🛡️</span><strong>Garantía</strong><br>Pago seguro</div>
+      <div class="step"><span>🎉</span><strong>Acceso</strong><br>Disfrutas</div>
+    </div>
+
+    <div class="footer">
+      Beta Privada · Chile 2026 · Sin spam
+    </div>
+  </div>
+
 </body>
 </html>
