@@ -45,6 +45,71 @@
       letter-spacing: -1px;
     }
 
+    /* GENERIC CARDS VISUAL */
+    .cards-visual {
+      position: relative;
+      width: 160px;
+      height: 100px;
+      margin: 14px auto 10px auto;
+    }
+
+    .card-ui {
+      position: absolute;
+      width: 140px;
+      height: 88px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #ffffff, #f2f2f2);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      border: 1px solid #EEE;
+    }
+
+    .card-1 {
+      transform: rotate(-8deg);
+      background: linear-gradient(135deg, #eae6ff, #ffffff);
+      top: 6px;
+      left: 0;
+      z-index: 1;
+    }
+
+    .card-2 {
+      transform: rotate(0deg);
+      background: linear-gradient(135deg, #f4f7fe, #ffffff);
+      top: 0;
+      left: 10px;
+      z-index: 2;
+    }
+
+    .card-3 {
+      transform: rotate(8deg);
+      background: linear-gradient(135deg, #e6fff6, #ffffff);
+      top: 6px;
+      left: 20px;
+      z-index: 3;
+    }
+
+    .card-ui::before {
+      content: "";
+      position: absolute;
+      width: 26px;
+      height: 20px;
+      border-radius: 4px;
+      background: linear-gradient(135deg, #d4d4d4, #f5f5f5);
+      top: 14px;
+      left: 14px;
+      opacity: 0.8;
+    }
+
+    .card-ui::after {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 6px;
+      border-radius: 3px;
+      background: rgba(0,0,0,0.08);
+      bottom: 16px;
+      left: 14px;
+    }
+
     .tagline {
       font-size: 14px;
       font-weight: 700;
@@ -200,6 +265,14 @@
 
   <div class="card">
     <div class="logo">BeneficiAll</div>
+
+    <!-- TARJETAS -->
+    <div class="cards-visual">
+      <div class="card-ui card-1"></div>
+      <div class="card-ui card-2"></div>
+      <div class="card-ui card-3"></div>
+    </div>
+
     <div class="tagline">La tarjeta da igual</div>
 
     <h2>Bienvenido a la democratización de los beneficios</h2>
