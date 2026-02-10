@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gracias | BeneficiAll</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --purple: #5A2D82;
+      --green: #2ECC71;
+      --white: #ffffff;
+      --bg: #0f0f14;
+      --text: #f2f2f2;
+      --soft: #b8b8c8;
+      --card: rgba(255,255,255,0.05);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top, #1b1026, #0f0f14 60%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 720px;
+      width: 100%;
+      background: var(--card);
+      backdrop-filter: blur(14px);
+      border-radius: 24px;
+      padding: 48px 36px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 0 40px rgba(90,45,130,0.25);
+    }
+
+    .logo {
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .logo span.all {
+      color: var(--green);
+    }
+
+    .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--purple), var(--green));
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-size: 36px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    h1 span {
+      background: linear-gradient(135deg, var(--purple), var(--green));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--soft);
+      margin-bottom: 24px;
+    }
+
+    .highlight {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin: 28px 0 36px;
+    }
+
+    .benefit-card {
+      background: rgba(255,255,255,0.04);
+      border-radius: 16px;
+      padding: 18px 16px;
+      border: 1px solid rgba(255,255,255,0.06);
+      font-size: 14px;
+    }
+
+    .benefit-title {
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--white);
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 14px 28px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--purple), var(--green));
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 0 24px rgba(46,204,113,0.35);
+    }
+
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 36px rgba(90,45,130,0.45);
+    }
+
+    .footer {
+      margin-top: 32px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 28px; }
+      .container { padding: 36px 24px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="logo">Benefici<span class="all">ALL</span></div>
+    <div class="badge">Registro exitoso</div>
+
+    <h1>¡Gracias por ser parte de <span>BeneficiAll</span>!</h1>
+
+    <p>
+      Tu registro fue recibido correctamente. Ahora formas parte del grupo de personas que serán las <span class="highlight">primeras en acceder</span> a una nueva forma de generar valor real a través de:
+    </p>
+
+    <div class="benefits">
+      <div class="benefit-card">
+        <div class="benefit-title">💰 Beneficios monetarios</div>
+        <div>Ingresos pasivos y recompensas reales</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-title">🎯 Puntos inteligentes</div>
+        <div>Acumulación por consumo y participación</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-title">🔁 Cashback</div>
+        <div>Recupera dinero en tus compras</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-title">🤝 Modelo colaborativo</div>
+        <div>Socios + compradores en un mismo ecosistema</div>
+      </div>
+    </div>
+
+    <p>
+      Te avisaremos cuando la plataforma esté activa para que puedas empezar a usar BeneficiAll desde el primer día.
+    </p>
+
+    <a href="index.html" class="cta">Volver a la landing</a>
+
+    <div class="footer">© 2026 BeneficiAll · Ecosistema financiero colaborativo</div>
+  </div>
+</body>
+</html>
