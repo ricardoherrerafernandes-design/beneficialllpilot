@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>BeneficiALL — La tarjeta da igual</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     :root {
       --primary: #5B2EFF;
@@ -45,8 +46,8 @@
     }
 
     .tagline {
-      font-size: 16px;
-      font-weight: 600;
+      font-size: 14px;
+      font-weight: 700;
       color: var(--gray);
       margin-bottom: 25px;
       text-transform: uppercase;
@@ -55,33 +56,74 @@
 
     h2 {
       font-size: 22px;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
       line-height: 1.3;
     }
 
     p.intro {
       font-size: 15px;
       color: var(--gray);
-      margin-bottom: 18px;
+      margin-bottom: 20px;
       line-height: 1.5;
     }
 
-    .benefits {
-      font-size: 14px;
+    /* ROLES */
+    .roles {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin: 25px 0 30px 0;
+    }
+
+    .role-card {
+      border-radius: 18px;
+      padding: 18px 16px;
+      text-align: left;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      border: 1px solid #EEE;
+    }
+
+    .role-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 0 0;
+    }
+
+    .role-card li {
+      font-size: 13.5px;
       color: var(--dark);
-      margin-bottom: 25px;
-      line-height: 1.5;
+      margin-bottom: 8px;
+      line-height: 1.4;
     }
 
-    .benefits span {
-      display: block;
-      margin-bottom: 6px;
+    .role-title {
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 2px;
+    }
+
+    .role-subtitle {
+      font-size: 12px;
+      color: var(--gray);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .role-card.socio {
+      background: linear-gradient(135deg, #f4f1ff, #ffffff);
+      border-left: 4px solid var(--primary);
+    }
+
+    .role-card.comprador {
+      background: linear-gradient(135deg, #ecfff9, #ffffff);
+      border-left: 4px solid var(--secondary);
     }
 
     form {
       display: flex;
       flex-direction: column;
       gap: 12px;
+      margin-top: 10px;
     }
 
     input, select, button {
@@ -141,32 +183,62 @@
       color: #AAA;
     }
 
+    @media (min-width: 600px) {
+      .roles {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
     @media (max-width: 480px) {
       .card { padding: 30px 20px; }
       h2 { font-size: 20px; }
     }
   </style>
 </head>
+
 <body>
 
   <div class="card">
     <div class="logo">BeneficiALL</div>
     <div class="tagline">La tarjeta da igual</div>
-    
-    <h2>Bienvenido a la democratización de los beneficios</h2>
+
+    <h2>La infraestructura que democratiza los beneficios</h2>
 
     <p class="intro">
-      Accede a descuentos, preventas y beneficios de cualquier banco o tienda sin importar qué tarjeta tengas.
-      Monetiza tus tarjetas ayudando a otros a acceder a beneficios exclusivos.
+      BeneficiALL conecta personas que tienen acceso a beneficios con personas que los necesitan.
+      Un ecosistema donde todos ganan.
     </p>
 
-    <div class="benefits">
-      <span>💰 Gana dinero por cada compra</span>
-      <span>🎯 Conserva puntos, millas y cashback</span>
-      <span>🔁 Monetiza beneficios que hoy no usas</span>
-      <span>🛍️ Ahorra sin cambiar de banco</span>
+    <!-- ROLES -->
+    <div class="roles">
+
+      <!-- SOCIO -->
+      <div class="role-card socio">
+        <div class="role-title">🤝 Socio</div>
+        <div class="role-subtitle">Monetiza tus tarjetas</div>
+        <ul>
+          <li>💰 Gana dinero por cada compra</li>
+          <li>🎯 Conserva puntos, millas y cashback</li>
+          <li>🔁 Rentabiliza beneficios que hoy no usas</li>
+          <li>⚡ Ingresos sin vender productos propios</li>
+        </ul>
+      </div>
+
+      <!-- COMPRADOR -->
+      <div class="role-card comprador">
+        <div class="role-title">🛍️ Comprador</div>
+        <div class="role-subtitle">Accede a beneficios</div>
+        <ul>
+          <li>💸 Accede a descuentos sin tener la tarjeta</li>
+          <li>🎫 Preventas y beneficios exclusivos</li>
+          <li>🏦 Sin cambiar de banco</li>
+          <li>🔓 Sin contratos ni productos financieros</li>
+        </ul>
+      </div>
+
     </div>
 
+    <!-- FORM -->
     <form action="https://formspree.io/f/xykdzzna" method="POST">
       <input type="text" name="nombre" placeholder="Nombre completo" required>
       <input type="email" name="_replyto" placeholder="Correo electrónico" required>
@@ -179,23 +251,24 @@
         <option value="ambos">Ambos</option>
       </select>
 
-      <button type="submit">Avísame cuando esté listo 🚀</button>
+      <button type="submit">Avísame cuando BeneficiALL esté disponible 🔔</button>
     </form>
 
+    <!-- HOW IT WORKS -->
     <div class="how-it-works">
       <div class="step">
         <span>🤝</span>
-        <strong>Conexión inteligente</strong><br>
-        Te conectamos con personas que necesitan tus beneficios.
+        <strong>Match inteligente</strong><br>
+        Conectamos personas con beneficios y personas que los necesitan.
       </div>
       <div class="step">
         <span>🛡️</span>
         <strong>Sistema protegido</strong><br>
-        Pagos con custodia, validación y trazabilidad.
+        Custodia, validación y trazabilidad en cada operación.
       </div>
       <div class="step">
         <span>💰</span>
-        <strong>Valor real</strong><br>
+        <strong>Valor compartido</strong><br>
         Ahorro para compradores. Ingresos y puntos para socios.
       </div>
     </div>
@@ -203,6 +276,7 @@
     <div class="footer">
       Lista de espera · Lanzamiento progresivo · Chile 2026 · Sin spam
     </div>
+
   </div>
 
 </body>
