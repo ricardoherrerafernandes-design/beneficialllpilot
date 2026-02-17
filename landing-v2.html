@@ -4,162 +4,192 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BeneficiAll | Compra usando beneficios que no tienes</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #f5f6fa;
-  color: #1f1f1f;
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:#f6f5ff;
+  color:#1a1a1a;
 }
 
-.hero {
-  background: linear-gradient(135deg, #5B2EFF, #8A5CFF);
-  color: white;
-  padding: 80px 20px;
-  text-align: center;
+/* HERO */
+
+.hero{
+  background:linear-gradient(135deg,#5B2EFF,#8E63FF);
+  color:white;
+  padding:90px 20px 100px;
+  text-align:center;
 }
 
-.logo {
-  width: 140px;
-  margin-bottom: 30px;
+.logo{
+  width:160px;
+  margin-bottom:35px;
 }
 
-.hero h1 {
-  font-size: 42px;
-  margin-bottom: 20px;
+.hero h1{
+  font-size:42px;
+  margin-bottom:20px;
+  font-weight:700;
 }
 
-.hero p {
-  font-size: 18px;
-  opacity: 0.9;
-  max-width: 600px;
-  margin: 0 auto 30px auto;
+.hero p{
+  font-size:18px;
+  max-width:650px;
+  margin:0 auto 30px;
+  opacity:0.95;
 }
 
-.btn-primary {
-  background: white;
-  color: #5B2EFF;
-  padding: 14px 28px;
-  border-radius: 10px;
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-block;
-  transition: 0.3s;
+.cta{
+  background:white;
+  color:#5B2EFF;
+  padding:15px 30px;
+  border-radius:12px;
+  font-weight:600;
+  text-decoration:none;
+  display:inline-block;
+  transition:0.3s;
 }
 
-.btn-primary:hover {
-  background: #f0ebff;
+.cta:hover{
+  background:#f0ebff;
 }
 
-.section {
-  padding: 80px 20px;
-  max-width: 1100px;
-  margin: auto;
+/* SECTIONS */
+
+.section{
+  padding:80px 20px;
+  max-width:1100px;
+  margin:auto;
 }
 
-.section h2 {
-  text-align: center;
-  font-size: 32px;
-  margin-bottom: 50px;
+.section h2{
+  text-align:center;
+  font-size:32px;
+  margin-bottom:50px;
 }
 
-.steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+/* HOW IT WORKS */
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
 }
 
-.card {
-  background: white;
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  text-align: center;
-  transition: 0.3s;
+.card{
+  background:white;
+  padding:30px;
+  border-radius:18px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.05);
+  text-align:center;
+  transition:0.3s;
 }
 
-.card:hover {
-  transform: translateY(-5px);
+.card:hover{
+  transform:translateY(-6px);
 }
 
-.step-number {
-  font-size: 28px;
-  font-weight: 700;
-  color: #5B2EFF;
-  margin-bottom: 10px;
+.step-number{
+  font-size:26px;
+  font-weight:700;
+  color:#5B2EFF;
+  margin-bottom:12px;
 }
 
-.trust {
-  background: #faf8ff;
-  padding: 60px 20px;
-  text-align: center;
+/* BENEFITS */
+
+.benefits{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
 }
 
-.trust-items {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 30px;
+.benefit-box{
+  background:white;
+  padding:30px;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
 }
 
-.trust-item {
-  font-weight: 500;
+/* TRUST */
+
+.trust{
+  background:#f1ecff;
+  text-align:center;
+  padding:70px 20px;
 }
 
-.form-container {
-  max-width: 500px;
-  margin: 60px auto;
-  background: white;
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+.trust p{
+  margin:10px 0;
+  font-weight:500;
 }
 
-form input, form select {
-  width: 100%;
-  padding: 14px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-  font-size: 14px;
+/* FORM */
+
+.form-container{
+  max-width:520px;
+  margin:60px auto;
+  background:white;
+  padding:45px;
+  border-radius:22px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.08);
 }
 
-form button {
-  width: 100%;
-  padding: 14px;
-  background: linear-gradient(135deg, #5B2EFF, #8A5CFF);
-  color: white;
-  border: none;
-  border-radius: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  font-size: 15px;
+form input, form select{
+  width:100%;
+  padding:14px;
+  margin-bottom:18px;
+  border-radius:10px;
+  border:1px solid #ddd;
+  font-size:14px;
 }
 
-form button:hover {
-  opacity: 0.9;
+form button{
+  width:100%;
+  padding:15px;
+  background:linear-gradient(135deg,#5B2EFF,#8E63FF);
+  border:none;
+  border-radius:12px;
+  color:white;
+  font-weight:600;
+  font-size:15px;
+  cursor:pointer;
 }
 
-.footer {
-  text-align: center;
-  padding: 30px;
-  font-size: 13px;
-  opacity: 0.6;
+form button:hover{
+  opacity:0.9;
+}
+
+.footer{
+  text-align:center;
+  padding:40px 20px;
+  font-size:13px;
+  opacity:0.6;
 }
 </style>
 </head>
 
 <body>
 
+<!-- HERO -->
 <section class="hero">
-  <img src="TU_LOGO_AQUI.png" class="logo">
+  <img src="logo.png" class="logo">
   <h1>Compra usando beneficios que no tienes</h1>
-  <p>Conectamos personas que necesitan un beneficio con quienes sí lo tienen. Seguro, simple y transparente.</p>
-  <a href="#formulario" class="btn-primary">Solicitar beneficio</a>
+  <p>Conectamos personas que necesitan un beneficio con quienes sí lo tienen. Un marketplace seguro para aprovechar descuentos, promociones y beneficios bancarios.</p>
+  <a href="#formulario" class="cta">Solicitar beneficio</a>
 </section>
 
+<!-- PROBLEMA / SOLUCION -->
+<section class="section">
+  <h2>💡 ¿Qué es BeneficiAll?</h2>
+  <p style="text-align:center; max-width:800px; margin:auto;">
+  Muchas promociones bancarias y beneficios exclusivos quedan sin uso. BeneficiAll conecta personas que necesitan esos beneficios con socios que sí tienen acceso, generando valor para ambos.
+  </p>
+</section>
+
+<!-- COMO FUNCIONA -->
 <section class="section">
   <h2>🔄 Cómo funciona</h2>
   <div class="steps">
@@ -186,24 +216,39 @@ form button:hover {
   </div>
 </section>
 
-<section class="trust">
-  <h2>🛡 Confianza ante todo</h2>
-  <div class="trust-items">
-    <div class="trust-item">🔒 Pago seguro</div>
-    <div class="trust-item">🤝 Comunidad verificada</div>
-    <div class="trust-item">💸 Liberación contra confirmación</div>
+<!-- BENEFICIOS -->
+<section class="section">
+  <h2>🎯 Beneficios para todos</h2>
+  <div class="benefits">
+    <div class="benefit-box">
+      <h3>Para quien compra</h3>
+      <p>Accede a descuentos exclusivos sin tener la tarjeta. Más ahorro, más oportunidades.</p>
+    </div>
+    <div class="benefit-box">
+      <h3>Para el socio</h3>
+      <p>Monetiza beneficios que no estás usando. Genera ingresos adicionales de forma simple.</p>
+    </div>
   </div>
 </section>
 
+<!-- CONFIANZA -->
+<section class="trust">
+  <h2>🛡 Seguridad ante todo</h2>
+  <p>🔒 Pago retenido hasta confirmación</p>
+  <p>🤝 Comunidad validada</p>
+  <p>💸 Liberación segura de fondos</p>
+</section>
+
+<!-- FORMULARIO -->
 <section id="formulario">
   <div class="form-container">
     <h2>Solicita tu beneficio</h2>
     <form>
-      <input type="text" placeholder="Tu nombre" required>
-      <input type="email" placeholder="Tu correo" required>
+      <input type="text" placeholder="Nombre completo" required>
+      <input type="email" placeholder="Correo electrónico" required>
       <input type="text" placeholder="Beneficio que necesitas" required>
       <select required>
-        <option value="">Selecciona tarjeta</option>
+        <option value="">Selecciona banco o tarjeta</option>
         <option>Banco de Chile</option>
         <option>Santander</option>
         <option>BCI</option>
@@ -215,7 +260,7 @@ form button:hover {
 </section>
 
 <div class="footer">
-  © 2026 BeneficiAll — Plataforma independiente de conexión entre usuarios
+© 2026 BeneficiAll — Plataforma independiente de conexión entre usuarios. No afiliada a bancos.
 </div>
 
 </body>
