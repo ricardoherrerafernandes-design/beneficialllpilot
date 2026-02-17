@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -31,15 +30,15 @@
       background: #ffffff;
       padding: 40px 30px;
       border-radius: 24px;
-      max-width: 440px;
-      width: 90%;
+      max-width: 480px;
+      width: 92%;
       box-shadow: 0 20px 50px rgba(0,0,0,0.3);
       text-align: center;
       margin: 20px;
     }
 
     .logo {
-      font-size: 28px;
+      font-size: 30px;
       font-weight: 800;
       color: var(--primary);
       margin-bottom: 5px;
@@ -112,7 +111,7 @@
     }
 
     .tagline {
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 700;
       color: var(--gray);
       margin-bottom: 25px;
@@ -121,19 +120,18 @@
     }
 
     h2 {
-      font-size: 22px;
+      font-size: 24px;
       margin-bottom: 12px;
       line-height: 1.3;
     }
 
     p.intro {
-      font-size: 15px;
+      font-size: 16.5px;
       color: var(--gray);
       margin-bottom: 20px;
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
-    /* ROLES */
     .roles {
       display: grid;
       grid-template-columns: 1fr;
@@ -156,10 +154,10 @@
     }
 
     .role-card li {
-      font-size: 13.5px;
+      font-size: 14.5px;
       color: var(--dark);
       margin-bottom: 8px;
-      line-height: 1.4;
+      line-height: 1.5;
     }
 
     .role-title {
@@ -189,7 +187,7 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
-      margin-top: 10px;
+      margin-top: 20px;
     }
 
     input, select, button {
@@ -224,21 +222,22 @@
 
     .how-it-works {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 12px;
+      grid-template-columns: 1fr;
+      gap: 14px;
       margin-top: 35px;
       padding-top: 25px;
       border-top: 1px solid #EEE;
+      text-align: left;
     }
 
     .step {
-      font-size: 12px;
+      font-size: 14px;
       color: var(--gray);
-      line-height: 1.3;
+      line-height: 1.5;
     }
 
     .step span {
-      font-size: 22px;
+      font-size: 20px;
       display: block;
       margin-bottom: 6px;
     }
@@ -256,9 +255,13 @@
     }
 
     @media (max-width: 480px) {
-      .card { padding: 30px 20px; }
-      h2 { font-size: 20px; }
+      .card { padding: 28px 18px; }
+      h2 { font-size: 22px; }
+      p.intro { font-size: 17px; }
+      .role-card li { font-size: 15px; }
+      input, select, button { font-size: 17px; }
     }
+
   </style>
 </head>
 
@@ -267,7 +270,6 @@
   <div class="card">
     <div class="logo">BeneficiAll</div>
 
-    <!-- TARJETAS -->
     <div class="cards-visual">
       <div class="card-ui card-1"></div>
       <div class="card-ui card-2"></div>
@@ -283,10 +285,8 @@
       Un ecosistema donde todos ganan.
     </p>
 
-    <!-- ROLES -->
     <div class="roles">
 
-      <!-- SOCIO -->
       <div class="role-card socio">
         <div class="role-title">🤝 Socio</div>
         <div class="role-subtitle">Monetiza tus tarjetas</div>
@@ -298,21 +298,32 @@
         </ul>
       </div>
 
-      <!-- COMPRADOR -->
       <div class="role-card comprador">
         <div class="role-title">🛍️ Comprador</div>
         <div class="role-subtitle">Accede a beneficios</div>
         <ul>
-          <li>💸 Descuentos en compras ciber sin tener la tarjeta</li>
-          <li>🎫 Preventas de conciertos y eventos exclusivos</li>
-          <li>🙅‍♂️ Sin pedir más favores a amigos o familiares</li>
-          <li>🔓 Sin contratos ni productos financieros</li>
+          <li>Obtén beneficios sin tener esa tarjeta</li>
+          <li>Ahorra en compras online y cyber</li>
+          <li>Accede a preventas de conciertos y eventos exclusivos</li>
         </ul>
       </div>
 
     </div>
 
-    <!-- FORM -->
+    <!-- EJEMPLO -->
+    <div class="role-card" style="margin-top:10px; background: linear-gradient(135deg, #ffffff, #f8f6ff); border-left: 4px solid var(--primary);">
+      <div class="role-title">💡 Ejemplo real</div>
+      <div class="role-subtitle">Cómo funciona en la práctica</div>
+      <ul>
+        <li><strong>María</strong> tiene una tarjeta que ofrece 30% de descuento en una tienda online.</li>
+        <li><strong>Pedro</strong> quiere comprar, pero no tiene esa tarjeta.</li>
+        <li>Pedro indica el beneficio que necesita.</li>
+        <li>María usa su tarjeta para realizar la compra.</li>
+        <li>Pedro ahorra.</li>
+        <li>María gana una comisión y acumula puntos o cashback.</li>
+      </ul>
+    </div>
+
     <form action="https://formspree.io/f/xykdzzna" method="POST">
       <input type="text" name="nombre" placeholder="Nombre completo" required>
       <input type="email" name="_replyto" placeholder="Correo electrónico" required>
@@ -330,21 +341,37 @@
 
     <!-- HOW IT WORKS -->
     <div class="how-it-works">
+
       <div class="step">
-        <span>🤝</span>
-        <strong>Match inteligente</strong><br>
-        Conectamos personas con beneficios y personas que los necesitan.
+        <span>1️⃣</span>
+        <strong>Indicas el beneficio</strong><br>
+        Nos dices qué descuento o preventa quieres usar.
       </div>
+
       <div class="step">
-        <span>🛡️</span>
-        <strong>Sistema protegido</strong><br>
-        Custodia, validación y trazabilidad en cada operación.
+        <span>2️⃣</span>
+        <strong>Hacemos el match</strong><br>
+        Te conectamos con un socio que tenga esa tarjeta.
       </div>
+
       <div class="step">
-        <span>💰</span>
-        <strong>Valor compartido</strong><br>
-        Ahorro y acceso para compradores. Ingresos y puntos para socios.
+        <span>3️⃣</span>
+        <strong>Pago protegido</strong><br>
+        Pagas en BeneficiAll. El dinero queda retenido.
       </div>
+
+      <div class="step">
+        <span>4️⃣</span>
+        <strong>Compra realizada</strong><br>
+        El socio usa su tarjeta y realiza la compra.
+      </div>
+
+      <div class="step">
+        <span>5️⃣</span>
+        <strong>Liberación del pago</strong><br>
+        Confirmada la entrega, liberamos el dinero al socio.
+      </div>
+
     </div>
 
     <div class="footer">
