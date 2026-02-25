@@ -1,384 +1,304 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>BeneficiALL — La tarjeta da igual</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BeneficiAll — La tarjeta da igual</title>
 
-  <style>
-    :root {
-      --primary: #5B2EFF;
-      --secondary: #2EE6A6;
-      --dark: #1A1A1A;
-      --gray: #666;
-      --light-bg: #F4F7FE;
-    }
+<style>
+:root {
+  --violet: #5B2EFF;
+  --mint: #2EE6A6;
+  --dark: #111111;
+  --gray: #666;
+  --light: #F7F8FC;
+}
 
-    body {
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: var(--dark);
-      margin: 0;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    .card {
-      background: #ffffff;
-      padding: 40px 30px;
-      border-radius: 24px;
-      max-width: 480px;
-      width: 92%;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-      text-align: center;
-      margin: 20px;
-    }
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+}
 
-    .logo {
-      font-size: 30px;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 5px;
-      letter-spacing: -1px;
-    }
+section {
+  padding: 80px 20px;
+}
 
-    /* GENERIC CARDS VISUAL */
-    .cards-visual {
-      position: relative;
-      width: 160px;
-      height: 100px;
-      margin: 14px auto 10px auto;
-    }
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
 
-    .card-ui {
-      position: absolute;
-      width: 140px;
-      height: 88px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #ffffff, #f2f2f2);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      border: 1px solid #EEE;
-    }
+h1 {
+  font-size: 48px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
 
-    .card-1 {
-      transform: rotate(-8deg);
-      background: linear-gradient(135deg, #eae6ff, #ffffff);
-      top: 6px;
-      left: 0;
-      z-index: 1;
-    }
+h2 {
+  font-size: 34px;
+  margin-bottom: 20px;
+}
 
-    .card-2 {
-      transform: rotate(0deg);
-      background: linear-gradient(135deg, #f4f7fe, #ffffff);
-      top: 0;
-      left: 10px;
-      z-index: 2;
-    }
+p {
+  font-size: 18px;
+  color: var(--gray);
+}
 
-    .card-3 {
-      transform: rotate(8deg);
-      background: linear-gradient(135deg, #e6fff6, #ffffff);
-      top: 6px;
-      left: 20px;
-      z-index: 3;
-    }
+.hero {
+  background: linear-gradient(135deg, var(--violet), #3e1ed6);
+  color: white;
+  text-align: center;
+}
 
-    .card-ui::before {
-      content: "";
-      position: absolute;
-      width: 26px;
-      height: 20px;
-      border-radius: 4px;
-      background: linear-gradient(135deg, #d4d4d4, #f5f5f5);
-      top: 14px;
-      left: 14px;
-      opacity: 0.8;
-    }
+.logo {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 40px;
+}
 
-    .card-ui::after {
-      content: "";
-      position: absolute;
-      width: 60px;
-      height: 6px;
-      border-radius: 3px;
-      background: rgba(0,0,0,0.08);
-      bottom: 16px;
-      left: 14px;
-    }
+.logo span {
+  color: var(--mint);
+}
 
-    .tagline {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--gray);
-      margin-bottom: 25px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
+.hero p {
+  color: #ddd;
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
 
-    h2 {
-      font-size: 24px;
-      margin-bottom: 12px;
-      line-height: 1.3;
-    }
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
 
-    p.intro {
-      font-size: 16.5px;
-      color: var(--gray);
-      margin-bottom: 20px;
-      line-height: 1.6;
-    }
+.btn {
+  padding: 16px 28px;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  transition: 0.2s ease;
+}
 
-    .roles {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-      margin: 25px 0 30px 0;
-    }
+.btn-primary {
+  background: var(--mint);
+  color: var(--dark);
+}
 
-    .role-card {
-      border-radius: 18px;
-      padding: 18px 16px;
-      text-align: left;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-      border: 1px solid #EEE;
-    }
+.btn-primary:hover {
+  transform: translateY(-3px);
+}
 
-    .role-card ul {
-      list-style: none;
-      padding: 0;
-      margin: 12px 0 0 0;
-    }
+.btn-secondary {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
 
-    .role-card li {
-      font-size: 14.5px;
-      color: var(--dark);
-      margin-bottom: 8px;
-      line-height: 1.5;
-    }
+.section-dark {
+  background: #111;
+  color: white;
+  text-align: center;
+}
 
-    .role-title {
-      font-size: 16px;
-      font-weight: 800;
-      margin-bottom: 2px;
-    }
+.section-dark p {
+  color: #aaa;
+}
 
-    .role-subtitle {
-      font-size: 12px;
-      color: var(--gray);
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+}
 
-    .role-card.socio {
-      background: linear-gradient(135deg, #f4f1ff, #ffffff);
-      border-left: 4px solid var(--primary);
-    }
+.card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
 
-    .role-card.comprador {
-      background: linear-gradient(135deg, #ecfff9, #ffffff);
-      border-left: 4px solid var(--secondary);
-    }
+.card h3 {
+  margin-bottom: 15px;
+}
 
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-top: 20px;
-    }
+.how-steps {
+  display: grid;
+  gap: 20px;
+  margin-top: 40px;
+}
 
-    input, select, button {
-      padding: 14px;
-      border-radius: 12px;
-      border: 1px solid #E0E0E0;
-      font-size: 16px;
-      width: 100%;
-      box-sizing: border-box;
-    }
+.step {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  border-left: 4px solid var(--violet);
+}
 
-    input:focus, select:focus {
-      border-color: var(--primary);
-      outline: none;
-      background-color: #F9F9FF;
-    }
+form {
+  margin-top: 40px;
+  display: grid;
+  gap: 15px;
+}
 
-    button {
-      background: var(--primary);
-      color: white;
-      border: none;
-      cursor: pointer;
-      font-weight: 700;
-      margin-top: 10px;
-      transition: transform 0.2s, background 0.2s;
-    }
+input, select, textarea {
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
 
-    button:hover {
-      background: #4020c9;
-      transform: translateY(-2px);
-    }
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
 
-    .how-it-works {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-      margin-top: 35px;
-      padding-top: 25px;
-      border-top: 1px solid #EEE;
-      text-align: left;
-    }
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 14px;
+  color: #aaa;
+}
 
-    .step {
-      font-size: 14px;
-      color: var(--gray);
-      line-height: 1.5;
-    }
-
-    .step span {
-      font-size: 20px;
-      display: block;
-      margin-bottom: 6px;
-    }
-
-    .footer {
-      margin-top: 25px;
-      font-size: 11px;
-      color: #AAA;
-    }
-
-    @media (min-width: 600px) {
-      .roles {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .card { padding: 28px 18px; }
-      h2 { font-size: 22px; }
-      p.intro { font-size: 17px; }
-      .role-card li { font-size: 15px; }
-      input, select, button { font-size: 17px; }
-    }
-
-  </style>
+@media(max-width: 768px) {
+  h1 { font-size: 36px; }
+  .grid-2 { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 
 <body>
 
-  <div class="card">
-    <div class="logo">BeneficiAll</div>
-
-    <div class="cards-visual">
-      <div class="card-ui card-1"></div>
-      <div class="card-ui card-2"></div>
-      <div class="card-ui card-3"></div>
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="logo">
+      BENEFICI<span>ALL</span>
     </div>
 
-    <div class="tagline">La tarjeta da igual</div>
+    <h1>Los beneficios no son privilegios.<br>Son acceso mal distribuido.</h1>
 
-    <h2>Bienvenido a la democratización de los beneficios</h2>
-
-    <p class="intro">
-      BeneficiAll conecta personas que tienen tarjetas de beneficios exclusivos con personas que los necesitan.
-      Un ecosistema donde todos ganan.
+    <p>
+      Si el descuento existe, debería ser accesible.
+      Si alguien tiene la tarjeta, alguien puede usar el beneficio.
+      <br><strong>La tarjeta da igual.</strong>
     </p>
 
-    <div class="roles">
+    <div class="cta-buttons">
+      <button class="btn btn-primary">Quiero desbloquear beneficios</button>
+      <button class="btn btn-secondary">Quiero monetizar los míos</button>
+    </div>
+  </div>
+</section>
 
-      <div class="role-card socio">
-        <div class="role-title">🤝 Socio</div>
-        <div class="role-subtitle">Monetiza tus tarjetas</div>
-        <ul>
-          <li>💰 Gana dinero por cada compra</li>
-          <li>🎯 Acumula puntos, millas y cashback</li>
-          <li>🔁 Rentabiliza beneficios que hoy no usas</li>
-          <li>⚡ Ingresos sin vender productos propios</li>
-        </ul>
+<!-- VERDAD -->
+<section class="section-dark">
+  <div class="container">
+    <h2>El problema no es el banco. Es la distribución.</h2>
+    <p>
+      Descuentos que nadie usa. Puntos que expiran.
+      Preventas que sobran.
+      BeneficiAll redistribuye el acceso.
+    </p>
+  </div>
+</section>
+
+<!-- EJEMPLO -->
+<section>
+  <div class="container">
+    <div class="card">
+      <h3>💡 Ejemplo real</h3>
+      <p>
+        María tiene 30% de descuento en una tienda online.
+        Pedro quiere comprar, pero no tiene esa tarjeta.
+      </p>
+      <p>
+        Pedro pide el beneficio. María realiza la compra.
+        Pedro ahorra. María gana comisión y acumula puntos.
+      </p>
+      <strong>Ambos ganan. El sistema se optimiza.</strong>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+  <div class="container">
+    <h2>Cómo funciona</h2>
+
+    <div class="how-steps">
+      <div class="step">1️⃣ Indicas el beneficio que quieres usar</div>
+      <div class="step">2️⃣ Te conectamos con un socio que tenga esa tarjeta</div>
+      <div class="step">3️⃣ Pagas de forma protegida en BeneficiAll (dinero retenido)</div>
+      <div class="step">4️⃣ El socio realiza la compra</div>
+      <div class="step">5️⃣ Confirmada la entrega, liberamos el pago</div>
+    </div>
+  </div>
+</section>
+
+<!-- DOS LADOS -->
+<section style="background:#F0F2FA;">
+  <div class="container">
+    <h2>Dos lados del poder</h2>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>🛍 Para quienes quieren acceso</h3>
+        <p>• Usa beneficios sin cambiar de banco</p>
+        <p>• Ahorra en compras y eventos</p>
+        <p>• Accede a descuentos exclusivos</p>
       </div>
 
-      <div class="role-card comprador">
-        <div class="role-title">🛍️ Comprador</div>
-        <div class="role-subtitle">Accede a beneficios</div>
-        <ul>
-          <li>Obtén beneficios sin tener esa tarjeta</li>
-          <li>Ahorra en compras online y cyber</li>
-          <li>Accede a preventas de conciertos y eventos exclusivos</li>
-        </ul>
+      <div class="card">
+        <h3>💳 Para quienes tienen tarjetas</h3>
+        <p>• Monetiza beneficios subutilizados</p>
+        <p>• Acumula más puntos o cashback</p>
+        <p>• Genera ingresos sin vender productos</p>
       </div>
-
     </div>
+  </div>
+</section>
 
-    <!-- EJEMPLO -->
-    <div class="role-card" style="margin-top:10px; background: linear-gradient(135deg, #ffffff, #f8f6ff); border-left: 4px solid var(--primary);">
-      <div class="role-title">💡 Ejemplo real</div>
-      <div class="role-subtitle">Cómo funciona en la práctica</div>
-      <ul>
-        <li><strong>María</strong> tiene una tarjeta que ofrece 30% de descuento en una tienda online.</li>
-        <li><strong>Pedro</strong> quiere comprar, pero no tiene esa tarjeta.</li>
-        <li>Pedro indica el beneficio que necesita.</li>
-        <li>María usa su tarjeta para realizar la compra.</li>
-        <li>Pedro ahorra.</li>
-        <li>María gana una comisión y acumula puntos o cashback.</li>
-      </ul>
-    </div>
+<!-- FORMULARIO -->
+<section>
+  <div class="container">
+    <h2>Únete al acceso anticipado</h2>
 
-    <form action="https://formspree.io/f/xykdzzna" method="POST">
-      <input type="text" name="nombre" placeholder="Nombre completo" required>
-      <input type="email" name="_replyto" placeholder="Correo electrónico" required>
-      <input type="tel" name="whatsapp" placeholder="WhatsApp (Ej: +569...)" required>
+    <form>
+      <input type="text" placeholder="Nombre completo" required>
+      <input type="email" placeholder="Correo electrónico" required>
+      <input type="tel" placeholder="WhatsApp" required>
 
-      <select name="perfil" required>
-        <option value="" disabled selected>Quiero participar como...</option>
-        <option value="comprador">Comprador (Quiero acceder a beneficios)</option>
-        <option value="socio">Socio (Quiero monetizar mis tarjetas)</option>
-        <option value="ambos">Ambos</option>
+      <select required>
+        <option value="">Quiero participar como...</option>
+        <option>Comprador</option>
+        <option>Socio</option>
+        <option>Ambos</option>
       </select>
 
-      <button type="submit">Avísame cuando BeneficiAll esté disponible 🔔</button>
+      <textarea placeholder="¿Tienes preguntas, ideas o sugerencias?"></textarea>
+
+      <button class="btn btn-primary">Quiero ser parte del movimiento</button>
     </form>
-
-    <!-- HOW IT WORKS -->
-    <div class="how-it-works">
-
-      <div class="step">
-        <span>1️⃣</span>
-        <strong>Indicas el beneficio</strong><br>
-        Nos dices qué descuento o preventa quieres usar.
-      </div>
-
-      <div class="step">
-        <span>2️⃣</span>
-        <strong>Hacemos el match</strong><br>
-        Te conectamos con un socio que tenga esa tarjeta.
-      </div>
-
-      <div class="step">
-        <span>3️⃣</span>
-        <strong>Pago protegido</strong><br>
-        Pagas en BeneficiAll. El dinero queda retenido.
-      </div>
-
-      <div class="step">
-        <span>4️⃣</span>
-        <strong>Compra realizada</strong><br>
-        El socio usa su tarjeta y realiza la compra.
-      </div>
-
-      <div class="step">
-        <span>5️⃣</span>
-        <strong>Liberación del pago</strong><br>
-        Confirmada la entrega, liberamos el dinero al socio.
-      </div>
-
-    </div>
-
-    <div class="footer">
-      Lista de espera · Lanzamiento progresivo · Chile 2026 · Sin spam
-    </div>
-
   </div>
+</section>
+
+<footer>
+  BeneficiAll · Acceso compartido · Poder redistribuido
+</footer>
 
 </body>
 </html>
